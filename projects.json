@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Mass\u2013Spring Launcher (MATLAB)",
+    "date": "2024",
+    "tags": [
+      "MATLAB",
+      "Modeling",
+      "Optimization"
+    ],
+    "summary": "Simulated and optimized launch dynamics; compared numerical solutions (ode45) vs. closed-form under damping.",
+    "links": {
+      "github": "https://github.com/julianosorio06/spring-mass_launcher",
+      "report": ""
+    }
+  },
+  {
+    "title": "Python Sensor Dashboard (Streamlit)",
+    "date": "2025",
+    "tags": [
+      "Python",
+      "Streamlit",
+      "Data"
+    ],
+    "summary": "CSV logging pipeline and live dashboard; vectorized pandas cleaning and plotting utilities.",
+    "links": {
+      "github": "https://github.com/julianosorio06/sensor_dashboard",
+      "demo": ""
+    }
+  }
+]

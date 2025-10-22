@@ -1,30 +1,123 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Julian Osorio — Portfolio</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background-color: #f5f5f5;
-    }
-    h1 { color: #2c3e50; }
-    a { color: #2980b9; text-decoration: none; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julian Osorio · Portfolio</title>
+  <meta name="description" content="Mechanical & Aerospace Engineering student at Brown University. Projects in MATLAB, Python, SolidWorks, and embedded systems.">
+  <meta property="og:title" content="Julian Osorio · Portfolio">
+  <meta property="og:description" content="Mechanical & Aerospace Engineering student at Brown University.">
+  <meta property="og:image" content="assets/img/placeholder.png">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Julian Osorio</h1>
-  <p>Hi, I'm Julian — a Brown University student learning Python, data visualization, and engineering. This site showcases my personal projects.</p>
+  <nav aria-label="Primary">
+    <div class="container nav-inner">
+      <div class="brand">Julian Osorio</div>
+      <div class="links" role="navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="assets/docs/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <button id="mobileToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">≡</button>
+    </div>
+    <div id="mobileMenu" class="container mobile-menu" role="navigation" aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/docs/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </nav>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>Sensor Dashboard</strong> – Real-time data dashboard built with Streamlit.<br>
-      🔗 <a href="https://julianosorio06-sensor-dashboard.streamlit.app" target="_blank">Live App</a> |
-      📁 <a href="https://github.com/julianosorio06/sensor_dashboard" target="_blank">GitHub Repo</a>
-    </li>
-  </ul>
+  <header class="hero">
+    <div class="container intro">
+      <div>
+        <h1>Mechanical & Aerospace Engineering @ Brown</h1>
+        <p class="lead">
+          I build data-driven engineering projects—CAD to code to test. Interests: structures, test & validation, manufacturing, and controls for aerospace systems.
+        </p>
+        <div class="cta">
+          <a class="button" href="#projects">View Projects</a>
+          <a class="button" href="assets/docs/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </div>
+      <div>
+        <img class="thumb" src="assets/img/placeholder.png" alt="Portfolio cover image">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>
+        I’m Julian Osorio, a sophomore at Brown University (Sc.B. Mechanical Engineering, aerospace focus).
+        I like turning napkin sketches into tested prototypes: MATLAB modeling, Python data tooling, and SolidWorks designs, with hands‑on validation.
+      </p>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div id="projectsGrid" class="card-grid" aria-live="polite">
+        <p>Loading projects…</p>
+      </div>
+      <p class="lead">To add or edit projects, update <code>projects.json</code>. Thumbnails go in <code>assets/img/</code>.</p>
+    </section>
+
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+      <article class="card">
+        <h3>Tampa International Airport – Hands-on Aircraft Internship</h3>
+        <p class="muted">Summer 2025</p>
+        <p>Assisted with hands-on tasks around airframes and maintenance environments; exposure to procedures, tooling, and documentation.</p>
+      </article>
+      <article class="card">
+        <h3>Course & Club Work</h3>
+        <p>Materials Science, E&M, Statics & Dynamics, Applied ODEs, Linear Algebra, Multivariable Calculus. Building a UAV from scratch and leading student projects integrating sensors and data pipelines.</p>
+      </article>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>CAD & Manufacturing</h3>
+          <p>SolidWorks, DFM/DFA mindset, tolerance awareness, test jig design.</p>
+        </div>
+        <div class="card">
+          <h3>Modeling & Analysis</h3>
+          <p>MATLAB/Simulink, numerical methods, basic FEA exposure, data analysis.</p>
+        </div>
+        <div class="card">
+          <h3>Embedded & Software</h3>
+          <p>Arduino, Python (pandas, plotting), Streamlit dashboards, Git/GitHub.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          <strong>Email:</strong> <a href="mailto:julianosorio06@gmail.com">julianosorio06@gmail.com</a><br>
+          <strong>GitHub:</strong> <a href="https://github.com/julianosorio06" target="_blank" rel="noopener">github.com/julianosorio06</a><br>
+          <strong>LinkedIn:</strong> <a href="#" target="_blank" rel="noopener">Add your LinkedIn URL</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Julian Osorio — Built with vanilla HTML/CSS/JS. Fast, clean, accessible.</div>
+  </footer>
+
+  <script defer src="js/script.js"></script>
 </body>
 </html>
