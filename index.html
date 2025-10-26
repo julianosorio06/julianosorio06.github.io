@@ -1,328 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Julian David Osorio – Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Julian David Osorio – Portfolio</title>
 
-  <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
-    <!-- NAVBAR -->
-    <header class="w-full border-b bg-white/80 backdrop-blur sticky top-0 z-50">
-      <nav class="mx-auto max-w-6xl flex items-center justify-between p-4">
-        <div class="font-semibold text-lg text-gray-900">Julian David Osorio</div>
-        <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-          <li><a href="#about" class="hover:text-gray-900">About</a></li>
-          <li><a href="#projects" class="hover:text-gray-900">Projects</a></li>
-          <li><a href="#gallery" class="hover:text-gray-900">Gallery</a></li>
-          <li><a href="#life" class="hover:text-gray-900">Life</a></li>
-          <li><a href="#skills" class="hover:text-gray-900">Skills</a></li>
-          <li><a href="#experience" class="hover:text-gray-900">Experience</a></li>
-          <li><a href="#contact" class="hover:text-gray-900">Contact</a></li>
-        </ul>
-        <a href="#contact" class="text-xs font-medium border border-gray-300 rounded-xl px-3 py-1 text-gray-800 hover:bg-gray-100">
-          Get in touch
-        </a>
-      </nav>
-    </header>
+  <style>
+    /* ----- base styles / tokens ----- */
+    :root {
+      --bg-page: #f9fafb;
+      --bg-card: #ffffff;
+      --bg-alt: #ffffff;
+      --bg-section-alt: #f3f4f6;
+      --text-main: #111827;
+      --text-dim: #4b5563;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --radius-lg: 1rem;
+      --radius-md: 0.75rem;
+      --shadow-card: 0 12px 24px -8px rgb(0 0 0 / 0.08);
+      --shadow-hover: 0 16px 32px -8px rgb(0 0 0 / 0.12);
+      --max-width: 72rem; /* ~1152px */
+      --pad-section-y: 3.5rem; /* 56px */
+      --pad-section-x: 1rem;   /* 16px */
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    }
 
-    <!-- HERO / ABOUT -->
-    <section id="about" class="w-full bg-white border-b">
-      <div class="mx-auto max-w-6xl w-full px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6">
-          <h1 class="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
-            Julian David Osorio
-          </h1>
-          <h2 class="text-lg md:text-xl font-medium text-gray-800 leading-snug">
-            Mechanical Engineering student at Brown University '28
-          </h2>
-          <p class="text-gray-600 text-base leading-relaxed max-w-xl">
-            Mechanical engineering student focused on aerospace systems, sensing, and fast physical prototyping.
-            I work across MATLAB (ODE45 / Simulink), Python (pandas data dashboards), SOLIDWORKS CAD, and hands-on hardware.
-          </p>
+    * {
+      box-sizing: border-box;
+    }
 
-          <div class="flex flex-wrap gap-3 text-sm">
-            <a href="#projects" class="rounded-xl px-4 py-2 bg-black text-white font-medium shadow hover:opacity-90">See my work</a>
-            <a href="#contact" class="rounded-xl px-4 py-2 border border-gray-300 font-medium text-gray-800 hover:bg-gray-100">Let's talk</a>
-          </div>
+    body {
+      margin: 0;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-          <div class="text-xs text-gray-500 leading-relaxed">
-            • Brown University '28 • GPA 3.7<br />
-            • Fluent in English & Spanish<br />
-            • Colombian-American, First Gen
-          </div>
-        </div>
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl bg-white shadow p-4 border border-gray-200">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500 font-medium">Focus</div>
-            <div class="text-base font-semibold text-gray-900">Aerospace / Mechanical Systems</div>
-            <div class="text-xs text-gray-600 leading-relaxed mt-2">Airfoil simulation, structural design, real-time sensor data.</div>
-          </div>
-          <div class="rounded-2xl bg-white shadow p-4 border border-gray-200">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500 font-medium">Tools</div>
-            <div class="text-base font-semibold text-gray-900">SOLIDWORKS · MATLAB · Python</div>
-            <div class="text-xs text-gray-600 leading-relaxed mt-2">CAD & drawings, ODE45 modeling, pandas dashboards.</div>
-          </div>
-          <div class="rounded-2xl bg-white shadow p-4 border border-gray-200">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500 font-medium">Experience</div>
-            <div class="text-base font-semibold text-gray-900">TA & Airport Ops</div>
-            <div class="text-xs text-gray-600 leading-relaxed mt-2">ENGN 0030 teaching assistant • Tampa Intl Airport Fellowship.</div>
-          </div>
-          <div class="rounded-2xl bg-white shadow p-4 border border-gray-200">
-            <div class="text-[11px] uppercase tracking-wide text-gray-500 font-medium">Looking For</div>
-            <div class="text-base font-semibold text-gray-900">Aerospace / Mechanical Roles</div>
-            <div class="text-xs text-gray-600 leading-relaxed mt-2">Open to prototyping, test, and systems work.</div>
-          </div>
-        </div>
+    h1,h2,h3,h4,h5,h6 {
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    /* ----- layout helpers ----- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: .5rem;
+    }
+
+    .nav-left {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-cta {
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: .4rem .75rem;
+      background: #fff;
+    }
+
+    .nav-cta:hover {
+      background: #f3f4f6;
+    }
+
+    .section {
+      padding: var(--pad-section-y) var(--pad-section-x);
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section.alt {
+      background: var(--bg-section-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section.white-edge-top {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .two-col {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media(min-width: 768px){
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .subgrid-two {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media(min-width: 640px){
+      .subgrid-two {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card-mini {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .card-mini-label {
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      font-size: .7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .card-mini-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: .25rem;
+    }
+
+    .card-mini-desc {
+      font-size: .75rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+      margin-top: .5rem;
+    }
+
+    .hero-name {
+      font-size: clamp(1.75rem,2vw,2rem);
+      font-weight: 700;
+    }
+
+    .hero-role {
+      font-size: clamp(1rem,1.5vw,1.25rem);
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .hero-text {
+      font-size: 1rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+      max-width: 34rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      font-size: .9rem;
+    }
+
+    .btn-dark {
+      background: #000;
+      color: #fff;
+      font-weight: 500;
+      border-radius: var(--radius-md);
+      padding: .6rem 1rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .btn-dark:hover {
+      opacity: .9;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-main);
+      font-weight: 500;
+      border-radius: var(--radius-md);
+      padding: .6rem 1rem;
+    }
+
+    .btn-outline:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-facts {
+      font-size: .7rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ----- headings inside sections ----- */
+    .section-headline-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      font-size: .7rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    /* ----- project cards ----- */
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media(min-width:768px){
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 1.25rem;
+      font-size: .8rem;
+      line-height: 1.5;
+      transition: box-shadow .15s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-image-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #f3f4f6;
+      overflow: hidden;
+      max-height: 12rem;
+      margin-bottom: .75rem;
+    }
+
+    .project-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-label {
+      font-size: .7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: .25rem;
+    }
+
+    .project-bullets {
+      font-size: .75rem;
+      color: var(--text-dim);
+      margin-top: .75rem;
+    }
+
+    .project-bullets li {
+      margin-bottom: .4rem;
+    }
+
+    .project-tools {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      color: var(--text-muted);
+      margin-top: .75rem;
+    }
+
+    /* ----- gallery grid ----- */
+    .gallery-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media(min-width:640px){
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media(min-width:768px){
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .gallery-img {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      background: #fff;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* ----- life cards ----- */
+    .life-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media(min-width:768px){
+      .life-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .life-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+
+    .life-imgbox {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #f3f4f6;
+      overflow: hidden;
+      max-height: 12rem;
+    }
+
+    .life-imgbox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .life-title {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .life-desc {
+      font-size: .75rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ----- skills ----- */
+    .skills-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media(min-width:640px){
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media(min-width:768px){
+      .skills-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 1.25rem;
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+
+    .skill-card h3 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding-left: 0;
+      margin: .75rem 0 0 0;
+      font-size: .75rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .skill-list li {
+      margin-bottom: .4rem;
+    }
+
+    /* ----- experience ----- */
+    .exp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 1.25rem;
+      font-size: .8rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: .5rem;
+    }
+
+    @media(min-width:768px){
+      .exp-header {
+        flex-direction: row;
+        align-items: baseline;
+      }
+    }
+
+    .exp-role {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .exp-org {
+      font-size: .7rem;
+      color: var(--text-muted);
+    }
+
+    .exp-date {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      color: var(--text-muted);
+    }
+
+    .exp-bullets {
+      font-size: .75rem;
+      color: var(--text-dim);
+      margin: .75rem 0 0 0;
+      padding-left: 1rem;
+    }
+
+    .exp-bullets li {
+      margin-bottom: .4rem;
+    }
+
+    /* ----- contact ----- */
+    .contact-wrapper {
+      max-width: 28rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 2rem;
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+
+    .contact-wrapper h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .contact-text {
+      font-size: .8rem;
+      color: var(--text-dim);
+      margin-top: .5rem;
+      line-height: 1.5;
+    }
+
+    .contact-info {
+      font-size: .8rem;
+      color: var(--text-main);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .contact-info div:first-child {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    footer.footer-note {
+      margin-top: 2rem;
+      font-size: .6rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">Julian David Osorio</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#life">Life</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
       </div>
-    </section>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </div>
+  </header>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="w-full bg-gray-50 border-b">
-      <div class="mx-auto max-w-6xl px-4 py-14">
-        <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-baseline justify-between">
-          <span>Highlighted Projects</span>
-          <span class="text-xs font-normal text-gray-500">Built in MATLAB & Python</span>
-        </h2>
+  <!-- ABOUT / HERO -->
+  <section id="about" class="section white-edge-top">
+    <div class="section-inner two-col">
+      <div class="space-y">
+        <h1 class="hero-name">Julian David Osorio</h1>
+        <div class="hero-role">Mechanical Engineering student at Brown University '28</div>
 
-        <div class="grid gap-6 md:grid-cols-2">
-
-          <!-- MATLAB Project -->
-          <article class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-            <div class="rounded-xl overflow-hidden border mb-3 bg-gray-100 max-h-48">
-              <img src="img/matlab_launcher.png" alt="MATLAB spring-mass launcher simulation"
-                   class="w-full h-full object-cover" />
-            </div>
-            <div class="text-[10px] uppercase tracking-wide text-gray-500 font-medium">MATLAB Simulation</div>
-            <div class="text-lg font-semibold text-gray-900 mt-1">Spring-Mass Launcher Optimization</div>
-            <ul class="text-xs text-gray-600 leading-relaxed mt-3 space-y-1 list-disc pl-4">
-              <li>Designed and simulated a mass–spring launcher in MATLAB using ODE45.</li>
-              <li>Implemented parameter optimization for launch distance and efficiency.</li>
-              <li>Visualized dynamic behavior through animated plots and data export.</li>
-            </ul>
-            <div class="text-[11px] text-gray-500 font-mono mt-4">Tools: MATLAB · Simulink</div>
-          </article>
-
-          <!-- Python Project -->
-          <article class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-            <div class="rounded-xl overflow-hidden border mb-3 bg-gray-100 max-h-48">
-              <img src="img/python_dashboard.jpg" alt="Python real-time sensor dashboard"
-                   class="w-full h-full object-cover" />
-            </div>
-            <div class="text-[10px] uppercase tracking-wide text-gray-500 font-medium">Python / Streamlit</div>
-            <div class="text-lg font-semibold text-gray-900 mt-1">Real-Time Sensor Dashboard</div>
-            <ul class="text-xs text-gray-600 leading-relaxed mt-3 space-y-1 list-disc pl-4">
-              <li>Developed a real-time data logging dashboard using Streamlit and pandas.</li>
-              <li>Integrated Arduino sensor data for live updates and plotting.</li>
-              <li>Enabled CSV export and visualization for quick analysis.</li>
-            </ul>
-            <div class="text-[11px] text-gray-500 font-mono mt-4">Tools: Python · Streamlit · pandas</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="mx-auto max-w-6xl w-full px-4 py-14">
-      <h2 class="text-xl font-bold text-gray-900 mb-2">Design Gallery</h2>
-      <p class="text-sm text-gray-700 leading-relaxed mb-6 max-w-xl">
-        Selected SOLIDWORKS parts and assemblies.
-      </p>
-      <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <img src="img/assembly_axle.png" alt="Assembly" class="rounded-2xl border border-gray-200 shadow-sm bg-white object-cover w-full h-full" />
-        <img src="img/bracket_mount.png" alt="Bracket" class="rounded-2xl border border-gray-200 shadow-sm bg-white object-cover w-full h-full" />
-        <img src="img/rotor_disc.png" alt="Rotor" class="rounded-2xl border border-gray-200 shadow-sm bg-white object-cover w-full h-full" />
-      </div>
-    </section>
-
-    <!-- LIFE -->
-    <section id="life" class="w-full bg-gray-50 border-t border-b">
-      <div class="mx-auto max-w-6xl px-4 py-14">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">Outside the Lab</h2>
-        <p class="text-sm text-gray-700 leading-relaxed max-w-2xl">
-          Family, training, travel, and the stuff that keeps me grounded. Engineering matters to me, but this is why I’m doing it.
+        <p class="hero-text">
+          Mechanical engineering student focused on aerospace systems, sensing, and fast physical prototyping.
+          I work across MATLAB (ODE45 / Simulink), Python (pandas data dashboards), SOLIDWORKS CAD, and hands-on hardware.
         </p>
 
-        <div class="grid gap-6 md:grid-cols-3 mt-8">
+        <div class="hero-buttons">
+          <a class="btn-dark" href="#projects">See my work</a>
+          <a class="btn-outline" href="#contact">Let's talk</a>
+        </div>
 
-          <!-- Family -->
-          <div class="rounded-2xl border bg-white p-5 shadow-sm flex flex-col gap-3">
-            <div class="rounded-xl overflow-hidden border aspect-video bg-gray-100">
-              <img src="img/family_photo.jpg" alt="Family" class="w-full h-full object-cover" />
-            </div>
-            <div class="text-sm font-semibold text-gray-900">Family</div>
-            <div class="text-xs text-gray-700 leading-relaxed">
-              As the son of two Colombian-American immigrants, I was raised in a loving family with a supportive community of friends,
-              neighbors, and teachers that allowed me to become the student-athlete I am today. What I understand today about resilience,
-              hard work, and sacrifice I learned from them.
-            </div>
-          </div>
-
-          <!-- Athletics -->
-          <div class="rounded-2xl border bg-white p-5 shadow-sm flex flex-col gap-3">
-            <div class="rounded-xl overflow-hidden border aspect-video bg-gray-100">
-              <img src="img/rugby_photo.jpg" alt="Rugby" class="w-full h-full object-cover" />
-            </div>
-            <div class="text-sm font-semibold text-gray-900">Athletics</div>
-            <div class="text-xs text-gray-700 leading-relaxed">
-              Brown Men's Club Rugby (wing/back). Rugby, lifting, and conditioning taught me discipline, communication,
-              and how to show up for a team.
-            </div>
-          </div>
-
-          <!-- Travel / Life -->
-          <div class="rounded-2xl border bg-white p-5 shadow-sm flex flex-col gap-3">
-            <div class="rounded-xl overflow-hidden border aspect-video bg-gray-100">
-              <img src="img/travel1.jpg" alt="Travel" class="w-full h-full object-cover" />
-            </div>
-            <div class="text-sm font-semibold text-gray-900">Travel / Life</div>
-            <div class="text-xs text-gray-700 leading-relaxed">
-              Moments with the people I’m grateful for. Celebrating progress and keeping perspective outside the classroom.
-            </div>
-          </div>
-
+        <div class="hero-facts">
+          • Brown University '28 • GPA 3.7<br/>
+          • Fluent in English & Spanish<br/>
+          • Colombian-American, First Gen
         </div>
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="mx-auto max-w-6xl w-full px-4 py-14">
-      <h2 class="text-xl font-bold text-gray-900 mb-6">Technical Skills</h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm">
-        <div class="rounded-2xl border bg-white p-5 shadow-sm">
-          <div class="font-semibold text-gray-900">Software & Coding</div>
-          <ul class="text-gray-700 mt-3 space-y-1 text-xs leading-relaxed">
+      <div class="subgrid-two">
+        <div class="card-mini">
+          <div class="card-mini-label">Focus</div>
+          <div class="card-mini-title">Aerospace / Mechanical Systems</div>
+          <div class="card-mini-desc">Airfoil simulation, structural design, real-time sensor data.</div>
+        </div>
+
+        <div class="card-mini">
+          <div class="card-mini-label">Tools</div>
+          <div class="card-mini-title">SOLIDWORKS · MATLAB · Python</div>
+          <div class="card-mini-desc">CAD & drawings, ODE45 modeling, pandas dashboards.</div>
+        </div>
+
+        <div class="card-mini">
+          <div class="card-mini-label">Experience</div>
+          <div class="card-mini-title">TA & Airport Ops</div>
+          <div class="card-mini-desc">ENGN 0030 teaching assistant • Tampa Intl Airport Fellowship.</div>
+        </div>
+
+        <div class="card-mini">
+          <div class="card-mini-label">Looking For</div>
+          <div class="card-mini-title">Aerospace / Mechanical Roles</div>
+          <div class="card-mini-desc">Open to prototyping, test, and systems work.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section alt">
+    <div class="section-inner">
+      <div class="section-headline-row">
+        <div class="section-title">Highlighted Projects</div>
+        <div class="section-subtitle">Built in MATLAB &amp; Python</div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- MATLAB CARD -->
+        <article class="project-card">
+          <div class="project-image-box">
+            <img src="img/matlab_launcher.png" alt="MATLAB spring-mass launcher simulation" />
+          </div>
+
+          <div class="project-label">MATLAB Simulation</div>
+          <div class="project-title">Spring-Mass Launcher Optimization</div>
+
+          <ul class="project-bullets">
+            <li>Designed and simulated a mass–spring launcher in MATLAB using ODE45.</li>
+            <li>Implemented parameter optimization for launch distance and efficiency.</li>
+            <li>Visualized dynamic behavior through animated plots and data export.</li>
+          </ul>
+
+          <div class="project-tools">Tools: MATLAB · Simulink</div>
+        </article>
+
+        <!-- PYTHON CARD -->
+        <article class="project-card">
+          <div class="project-image-box">
+            <img src="img/python_dashboard.jpg" alt="Python real-time sensor dashboard" />
+          </div>
+
+          <div class="project-label">Python / Streamlit</div>
+          <div class="project-title">Real-Time Sensor Dashboard</div>
+
+          <ul class="project-bullets">
+            <li>Developed a real-time data logging dashboard using Streamlit and pandas.</li>
+            <li>Integrated Arduino sensor data for live updates and plotting.</li>
+            <li>Enabled CSV export and visualization for quick analysis.</li>
+          </ul>
+
+          <div class="project-tools">Tools: Python · Streamlit · pandas</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="section-inner">
+      <div class="section-headline-row" style="margin-bottom:1rem;">
+        <div class="section-title">Design Gallery</div>
+        <div class="section-subtitle">Selected SOLIDWORKS parts and assemblies</div>
+      </div>
+
+      <div class="gallery-grid">
+        <img class="gallery-img" src="img/assembly_axle.png" alt="Assembly" />
+        <img class="gallery-img" src="img/bracket_mount.png" alt="Bracket" />
+        <img class="gallery-img" src="img/rotor_disc.png" alt="Rotor" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFE -->
+  <section id="life" class="section alt">
+    <div class="section-inner">
+      <div class="section-headline-row" style="margin-bottom:.5rem;">
+        <div class="section-title">Outside the Lab</div>
+        <div class="section-subtitle">Family, training, travel</div>
+      </div>
+      <p class="hero-text" style="font-size:.85rem; max-width:42rem;">
+        Engineering matters to me, but this is why I’m doing it.
+      </p>
+
+      <div class="life-grid" style="margin-top:2rem;">
+        <!-- FAMILY -->
+        <div class="life-card">
+          <div class="life-imgbox">
+            <img src="img/family_photo.jpg" alt="Family" />
+          </div>
+          <div class="life-title">Family</div>
+          <div class="life-desc">
+            As the son of two Colombian-American immigrants, I was raised in a loving family with a supportive community of friends,
+            neighbors, and teachers that allowed me to become the student-athlete I am today. What I understand today about resilience,
+            hard work, and sacrifice I learned from them.
+          </div>
+        </div>
+
+        <!-- ATHLETICS -->
+        <div class="life-card">
+          <div class="life-imgbox">
+            <img src="img/rugby_photo.jpg" alt="Rugby / Athletics" />
+          </div>
+          <div class="life-title">Athletics</div>
+          <div class="life-desc">
+            Brown Men's Club Rugby (wing/back). Rugby, lifting, and conditioning taught me discipline,
+            communication, and how to show up for a team.
+          </div>
+        </div>
+
+        <!-- TRAVEL -->
+        <div class="life-card">
+          <div class="life-imgbox">
+            <img src="img/travel1.jpg" alt="Friends / Milestones" />
+          </div>
+          <div class="life-title">Travel / Life</div>
+          <div class="life-desc">
+            Moments with the people I’m grateful for. Celebrating progress and keeping perspective outside the classroom.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <div class="section-headline-row">
+        <div class="section-title">Technical Skills</div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Software &amp; Coding</h3>
+          <ul class="skill-list">
             <li>MATLAB / Simulink</li>
             <li>Python (pandas, data viz, Streamlit)</li>
-            <li>Arduino / C++ for sensors & control</li>
-            <li>Git & GitHub</li>
+            <li>Arduino / C++ for sensors &amp; control</li>
+            <li>Git &amp; GitHub</li>
           </ul>
         </div>
-        <div class="rounded-2xl border bg-white p-5 shadow-sm">
-          <div class="font-semibold text-gray-900">Mechanical / Aero</div>
-          <ul class="text-gray-700 mt-3 space-y-1 text-xs leading-relaxed">
-            <li>SOLIDWORKS CAD & drawings</li>
+
+        <div class="skill-card">
+          <h3>Mechanical / Aero</h3>
+          <ul class="skill-list">
+            <li>SOLIDWORKS CAD &amp; drawings</li>
             <li>Statics, Dynamics, Materials</li>
-            <li>Prototype test & iteration</li>
-            <li>Basic GD&T, tolerance reasoning</li>
+            <li>Prototype test &amp; iteration</li>
+            <li>Basic GD&amp;T, tolerance reasoning</li>
           </ul>
         </div>
-        <div class="rounded-2xl border bg-white p-5 shadow-sm">
-          <div class="font-semibold text-gray-900">Other</div>
-          <ul class="text-gray-700 mt-3 space-y-1 text-xs leading-relaxed">
-            <li>Hardware bring-up & wiring</li>
+
+        <div class="skill-card">
+          <h3>Other</h3>
+          <ul class="skill-list">
+            <li>Hardware bring-up &amp; wiring</li>
             <li>Data cleaning and visualization</li>
-            <li>Technical communication & demos</li>
-            <li>Leadership & mentoring</li>
+            <li>Technical communication &amp; demos</li>
+            <li>Leadership &amp; mentoring</li>
           </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="w-full bg-white border-t border-b">
-      <div class="mx-auto max-w-6xl px-4 py-14">
-        <h2 class="text-xl font-bold text-gray-900 mb-6">Experience</h2>
-        <div class="space-y-6">
-
-          <div class="rounded-2xl border bg-white p-5 shadow-sm">
-            <div class="flex flex-col md:flex-row md:items-baseline md:justify-between">
-              <div>
-                <div class="text-sm font-semibold text-gray-900">
-                  Teaching Assistant – ENGN 0030: Introduction to Engineering
-                </div>
-                <div class="text-xs text-gray-600">Brown University</div>
-              </div>
-              <div class="text-[11px] text-gray-500 font-mono mt-2 md:mt-0">
-                Aug 2025 – Present
-              </div>
-            </div>
-            <ul class="text-xs text-gray-700 leading-relaxed mt-3 space-y-1">
-              <li>Collaborate with professors and course developers to review class material and develop curricular content.</li>
-              <li>Support 50+ students weekly in MATLAB and SOLIDWORKS fundamentals.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-2xl border bg-white p-5 shadow-sm">
-            <div class="flex flex-col md:flex-row md:items-baseline md:justify-between">
-              <div>
-                <div class="text-sm font-semibold text-gray-900">
-                  Fellow – Tampa International Airport Fellowship Program
-                </div>
-                <div class="text-xs text-gray-600">Tampa International Airport</div>
-              </div>
-              <div class="text-[11px] text-gray-500 font-mono mt-2 md:mt-0">
-                July 2025
-              </div>
-            </div>
-            <ul class="text-xs text-gray-700 leading-relaxed mt-3 space-y-1">
-              <li>Previewed airport operations including airport security, terminal management, and aircraft maintenance.</li>
-              <li>Delivered closing presentation to Tampa Bay officials on Cessna maintenance practices at Tampa Executive Airport.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-2xl border bg-white p-5 shadow-sm">
-            <div class="flex flex-col md:flex-row md:items-baseline md:justify-between">
-              <div>
-                <div class="text-sm font-semibold text-gray-900">
-                  Event Coordinator – Latinx Student Union (LSU)
-                </div>
-                <div class="text-xs text-gray-600">Brown University</div>
-              </div>
-              <div class="text-[11px] text-gray-500 font-mono mt-2 md:mt-0">
-                Jan 2025 – Present
-              </div>
-            </div>
-            <ul class="text-xs text-gray-700 leading-relaxed mt-3 space-y-1">
-              <li>Coordinate with Brown's Office of Student Affairs to plan community and cultural events.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-2xl border bg-white p-5 shadow-sm">
-            <div class="flex flex-col md:flex-row md:items-baseline md:justify-between">
-              <div>
-                <div class="text-sm font-semibold text-gray-900">
-                  Executive Coordinator & Tutor – English as a Second Language Program
-                </div>
-                <div class="text-xs text-gray-600">Delbarton School</div>
-              </div>
-              <div class="text-[11px] text-gray-500 font-mono mt-2 md:mt-0">
-                2022 – 2024
-              </div>
-            </div>
-            <ul class="text-xs text-gray-700 leading-relaxed mt-3 space-y-1">
-              <li>Scheduled and led English/Spanish tutoring for janitorial staff and faculty with different English comfort levels.</li>
-              <li>Worked 1-on-1 with advanced learners to prep for the U.S. Citizenship Exam.</li>
-            </ul>
-          </div>
-
-        </div>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section white-edge-top">
+    <div class="section-inner">
+      <div class="section-headline-row">
+        <div class="section-title">Experience</div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="mx-auto max-w-6xl w-full px-4 py-16">
-      <div class="rounded-2xl border bg-white p-8 shadow-sm max-w-xl">
-        <h2 class="text-xl font-bold text-gray-900">Get in touch</h2>
-        <p class="text-sm text-gray-700 leading-relaxed mt-2">
-          If you're working on aerospace or mechanical systems and need someone who will build, test, and iterate fast, let's talk.
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Teaching Assistant – ENGN 0030: Introduction to Engineering</div>
+            <div class="exp-org">Brown University</div>
+          </div>
+          <div class="exp-date">Aug 2025 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Collaborate with professors and course developers to review class material and develop curricular content.</li>
+          <li>Support 50+ students weekly in MATLAB and SOLIDWORKS fundamentals.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Fellow – Tampa International Airport Fellowship Program</div>
+            <div class="exp-org">Tampa International Airport</div>
+          </div>
+          <div class="exp-date">July 2025</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Previewed airport operations including airport security, terminal management, and aircraft maintenance.</li>
+          <li>Delivered closing presentation to Tampa Bay officials on Cessna maintenance practices at Tampa Executive Airport.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Event Coordinator – Latinx Student Union (LSU)</div>
+            <div class="exp-org">Brown University</div>
+          </div>
+          <div class="exp-date">Jan 2025 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Coordinate with Brown's Office of Student Affairs to plan community and cultural events.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Executive Coordinator &amp; Tutor – English as a Second Language Program</div>
+            <div class="exp-org">Delbarton School</div>
+          </div>
+          <div class="exp-date">2022 – 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Scheduled and led English/Spanish tutoring for janitorial staff and faculty with different English comfort levels.</li>
+          <li>Worked 1-on-1 with advanced learners to prep for the U.S. Citizenship Exam.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner" style="display:flex;flex-direction:column;align-items:flex-start;">
+      <div class="contact-wrapper">
+        <h2>Get in touch</h2>
+        <p class="contact-text">
+          If you're working on aerospace or mechanical systems and need someone who will build,
+          test, and iterate fast, let's talk.
         </p>
-        <div class="mt-6 text-sm leading-relaxed">
-          <div class="font-semibold text-gray-900">Julian David Osorio</div>
-          <div class="text-gray-700">Mechanical Engineering student at Brown University '28</div>
-          <div class="text-gray-700">Phone: (973) 460-0977</div>
-          <div class="text-gray-700">Email: julian_osorio@brown.edu</div>
-          <div class="text-gray-700">GitHub: julianosorio06.github.io</div>
-          <div class="text-gray-700">LinkedIn: linkedin.com/in/julian-d-osorio</div>
+        <div class="contact-info">
+          <div>Julian David Osorio</div>
+          <div>Mechanical Engineering student at Brown University '28</div>
+          <div>Phone: (973) 460-0977</div>
+          <div>Email: julian_osorio@brown.edu</div>
+          <div>GitHub: julianosorio06.github.io</div>
+          <div>LinkedIn: linkedin.com/in/julian-d-osorio</div>
         </div>
       </div>
 
-      <footer class="text-[10px] text-gray-500 mt-10 text-center">
+      <footer class="footer-note">
         Built by Julian Osorio • Last updated Oct 26, 2025
       </footer>
-    </section>
+    </div>
+  </section>
 
-  </body>
+</body>
 </html>
