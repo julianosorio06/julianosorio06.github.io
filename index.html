@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julian David Osorio – Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+    <!-- NAVBAR -->
+    <header class="w-full border-b bg-white/70 backdrop-blur sticky top-0 z-50">
+      <nav class="mx-auto max-w-6xl flex items-center justify-between p-4">
+        <div class="font-semibold text-lg">Julian David Osorio</div>
+        <ul class="hidden md:flex gap-6 text-sm font-medium">
+          <li><a href="#about" class="hover:text-gray-700">About</a></li>
+          <li><a href="#projects" class="hover:text-gray-700">Projects</a></li>
+          <li><a href="#gallery" class="hover:text-gray-700">Gallery</a></li>
+          <li><a href="#life" class="hover:text-gray-700">Life</a></li>
+          <li><a href="#skills" class="hover:text-gray-700">Skills</a></li>
+          <li><a href="#experience" class="hover:text-gray-700">Experience</a></li>
+          <li><a href="#contact" class="hover:text-gray-700">Contact</a></li>
+        </ul>
+        <a href="#contact" class="text-xs font-medium border border-gray-300 rounded-xl px-3 py-1 hover:bg-gray-100">
+          Get in touch
+        </a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="about" class="mx-auto max-w-6xl w-full px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
+          Julian David Osorio
+        </h1>
+        <h2 class="text-lg md:text-xl font-medium text-gray-800 leading-snug">
+          Mechanical Engineering student at Brown University '28
+        </h2>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Mechanical engineering student focused on aerospace systems, sensing, and fast physical prototyping.
+          I work across MATLAB (ODE45 / Simulink), Python (pandas data dashboards), SOLIDWORKS CAD, and hands-on hardware.
+        </p>
+        <div class="flex flex-wrap gap-3 text-sm">
+          <a href="#projects" class="rounded-xl px-4 py-2 bg-black text-white font-medium shadow">See my work</a>
+          <a href="#contact" class="rounded-xl px-4 py-2 border border-gray-300 font-medium text-gray-800 hover:bg-gray-100">Let's talk</a>
+        </div>
+        <div class="text-xs text-gray-500">
+          • Brown University '28 • GPA 3.7 • Fluent in English & Spanish • Colombian-American, First Gen
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl bg-white shadow p-4 border border-gray-100">
+          <div class="text-xs uppercase tracking-wide text-gray-500 font-medium">Focus</div>
+          <div class="text-base font-semibold text-gray-900">Aerospace / Mechanical Systems</div>
+          <div class="text-xs text-gray-600 leading-relaxed mt-2">Airfoil simulation, structural design, real-time sensor data.</div>
+        </div>
+        <div class="rounded-2xl bg-white shadow p-4 border border-gray-100">
+          <div class="text-xs uppercase tracking-wide text-gray-500 font-medium">Tools</div>
+          <div class="text-base font-semibold text-gray-900">SOLIDWORKS · MATLAB · Python</div>
+          <div class="text-xs text-gray-600 leading-relaxed mt-2">CAD & drawings, ODE45 modeling, pandas dashboards.</div>
+        </div>
+        <div class="rounded-2xl bg-white shadow p-4 border border-gray-100">
+          <div class="text-xs uppercase tracking-wide text-gray-500 font-medium">Experience</div>
+          <div class="text-base font-semibold text-gray-900">TA & Airport Ops</div>
+          <div class="text-xs text-gray-600 leading-relaxed mt-2">ENGN 0030 teaching assistant • Tampa Intl Airport Fellowship.</div>
+        </div>
+        <div class="rounded-2xl bg-white shadow p-4 border border-gray-100">
+          <div class="text-xs uppercase tracking-wide text-gray-500 font-medium">Looking For</div>
+          <div class="text-base font-semibold text-gray-900">Aerospace / Mechanical Roles</div>
+          <div class="text-xs text-gray-600 leading-relaxed mt-2">Open to prototyping, test, and systems work.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="w-full bg-white border-t border-b">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <h2 class="text-xl font-bold text-gray-900 mb-6">Highlighted Projects</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+
+          <!-- MATLAB Project -->
+          <article class="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="rounded-xl overflow-hidden aspect-video border mb-3">
+              <img src="img/matlab_launcher.jpg" alt="MATLAB spring-mass launcher simulation" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-[10px] uppercase tracking-wide text-gray-500 font-medium">MATLAB Simulation</div>
+            <div class="text-lg font-semibold text-gray-900 mt-1">Spring-Mass Launcher Optimization</div>
+            <ul class="text-xs text-gray-600 leading-relaxed mt-3 space-y-1 list-disc pl-4">
+              <li>Designed and simulated a mass–spring launcher in MATLAB using ODE45.</li>
+              <li>Implemented parameter optimization for launch distance and efficiency.</li>
+              <li>Visualized dynamic behavior through animated plots and data export.</li>
+            </ul>
+            <div class="text-[11px] text-gray-500 font-mono mt-4">Tools: MATLAB · Simulink</div>
+          </article>
+
+          <!-- Python Project -->
+          <article class="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="rounded-xl overflow-hidden aspect-video border mb-3">
+              <img src="img/python_dashboard.jpg" alt="Python real-time sensor dashboard" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-[10px] uppercase tracking-wide text-gray-500 font-medium">Python / Streamlit</div>
+            <div class="text-lg font-semibold text-gray-900 mt-1">Real-Time Sensor Dashboard</div>
+            <ul class="text-xs text-gray-600 leading-relaxed mt-3 space-y-1 list-disc pl-4">
+              <li>Developed a real-time data logging dashboard using Streamlit and pandas.</li>
+              <li>Integrated Arduino sensor data for live updates and plotting.</li>
+              <li>Enabled CSV export and visualization for quick analysis.</li>
+            </ul>
+            <div class="text-[11px] text-gray-500 font-mono mt-4">Tools: Python · Streamlit · pandas</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="mx-auto max-w-6xl w-full px-4 py-14">
+      <h2 class="text-xl font-bold text-gray-900 mb-2">Design Gallery</h2>
+      <p class="text-sm text-gray-700 leading-relaxed mb-6 max-w-xl">
+        Selected SOLIDWORKS parts and assemblies.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <img src="img/assembly_axle.png" alt="Assembly" class="rounded-2xl border shadow-sm" />
+        <img src="img/bracket_mount.png" alt="Bracket" class="rounded-2xl border shadow-sm" />
+        <img src="img/rotor_disc.png" alt="Rotor" class="rounded-2xl border shadow-sm" />
+      </div>
+    </section>
+
+    <!-- LIFE SECTION -->
+    <section id="life" class="w-full bg-gray-50 border-t">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Outside the Lab</h2>
+        <div class="grid gap-6 md:grid-cols-3 mt-8">
+          <div class="rounded-2xl border bg-white p-5 shadow-sm">
+            <div class="rounded-xl overflow-hidden aspect-video border mb-3">
+              <img src="img/family_photo.jpg" alt="Family" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-sm font-semibold text-gray-900">Family</div>
+            <div class="text-xs text-gray-700 leading-relaxed">
+              As the son of two Colombian-American immigrants, I was raised in a loving family with a supportive community of friends,
+              neighbors, and teachers that allowed me to become the student-athlete I am today. What I understand today about resilience,
+              hard work, and sacrifice I learned from them.
+            </div>
+          </div>
+          <div class="rounded-2xl border bg-white p-5 shadow-sm">
+            <div class="rounded-xl overflow-hidden aspect-video border mb-3">
+              <img src="img/rugby_photo.jpg" alt="Rugby" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-sm font-semibold text-gray-900">Athletics</div>
+            <div class="text-xs text-gray-700 leading-relaxed">
+              Rugby and strength training have taught me discipline, resilience, and teamwork — lessons that shape both my mindset and work ethic.
+            </div>
+          </div>
+          <div class="rounded-2xl border bg-white p-5 shadow-sm">
+            <div class="rounded-xl overflow-hidden aspect-video border mb-3">
+              <img src="img/travel1.jpg" alt="Travel" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-sm font-semibold text-gray-900">Travel / Life</div>
+            <div class="text-xs text-gray-700 leading-relaxed">
+              Experiences with friends and family remind me why I pursue engineering — to build a future where people can explore, connect, and grow.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-6xl w-full px-4 py-16">
+      <div class="rounded-2xl border bg-white p-8 shadow-sm max-w-xl">
+        <h2 class="text-xl font-bold text-gray-900">Get in touch</h2>
+        <p class="text-sm text-gray-700 leading-relaxed mt-2">
+          If you're working on aerospace or mechanical systems and need someone who will build, test, and iterate fast, let's talk.
+        </p>
+        <div class="mt-6 text-sm">
+          <div class="font-semibold text-gray-900">Julian David Osorio</div>
+          <div class="text-gray-700">Mechanical Engineering student at Brown University '28</div>
+          <div class="text-gray-700">Phone: (973) 460-0977</div>
+          <div class="text-gray-700">Email: julian_osorio@brown.edu</div>
+          <div class="text-gray-700">GitHub: julianosorio06.github.io</div>
+          <div class="text-gray-700">LinkedIn: linkedin.com/in/julian-d-osorio</div>
+        </div>
+      </div>
+      <footer class="text-[10px] text-gray-500 mt-10 text-center">
+        Built by Julian Osorio • Last updated Oct 26, 2025
+      </footer>
+    </section>
+  </body>
+</html>
